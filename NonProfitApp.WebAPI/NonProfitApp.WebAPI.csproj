@@ -15,6 +15,7 @@
     <ProjectReference Include="NonProfitApp.Services\NonProfitApp.Services.csproj" />
     <ProjectReference Include="NonProfitApp.Data\NonProfitApp.Data.csproj" />
     <ProjectReference Include="NonProfitApp.Models\NonProfitApp.Models.csproj" />
+    <ProjectReference Include="..\NonProfitApp.Data\NonProfitApp.Data.csproj" />
   </ItemGroup>
 
 </Project>
