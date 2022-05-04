@@ -1,4 +1,5 @@
-﻿namespace NonProfitApp.Data;
+﻿
+namespace NonProfitApp.Data;
 public class Class1
 {
 
