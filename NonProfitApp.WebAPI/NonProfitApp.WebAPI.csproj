@@ -8,13 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="NonProfitApp.Services\NonProfitApp.Services.csproj" />
-    <ProjectReference Include="NonProfitApp.Data\NonProfitApp.Data.csproj" />
-    <ProjectReference Include="NonProfitApp.Models\NonProfitApp.Models.csproj" />
+    <ProjectReference Include="..\NonProfitApp.Services\NonProfitApp.Services.csproj" />
+    <ProjectReference Include="..\NonProfitApp.Models\NonProfitApp.Models.csproj" />
     <ProjectReference Include="..\NonProfitApp.Data\NonProfitApp.Data.csproj" />
   </ItemGroup>
 
