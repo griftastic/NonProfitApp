@@ -4,18 +4,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NonProfitApp.Data.Entities
+namespace NonProfitApp.Models.User
 {
-    public class UserEntity
+    public class UserRegister
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [MinLength(4)]
         public string Password { get; set; }
-        public DateTime DateCreated { get; set; }
+        [Compare(nameof(Password))]
+        public string ConfirmPassword { get; set; }
+        [Required]
         public bool NonProfitUser { get; set; }
+        
     }
 }
