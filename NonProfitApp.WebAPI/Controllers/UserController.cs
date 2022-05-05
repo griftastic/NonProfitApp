@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NonProfitApp.Models.User;
 using NonProfitApp.Data;
+using NonProfitApp.Services.User;
 
 namespace NonProfitApp.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
-
-        public UserController(ILogger<UserController> logger)
+        
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
-            _logger = logger;
+            _userService = userService;
         }
 
         [HttpPost("Register")]
