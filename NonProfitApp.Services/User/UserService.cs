@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using NonProfitApp.Data;
 using NonProfitApp.Data.Entities;
 using NonProfitApp.Models.User;
+using Microsoft.AspNetCore.Identity;
 
 namespace NonProfitApp.Services.User
 {
@@ -27,6 +28,8 @@ namespace NonProfitApp.Services.User
                 Email = model.Email,
                 DateCreated = DateTime.Now
             };
+            var passwordHasher = new PasswordHasher<UserEntity>();
+            entity.Password = passwordHasher.HashPassword(entity,model.Password);
 
             _context.Users.Add(entity);
             var numberOfChanges = await _context.SaveChangesAsync();
