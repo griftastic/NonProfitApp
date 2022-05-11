@@ -15,6 +15,8 @@ namespace NonProfitApp.Data.Entities
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+        // public string FirstName { get; set; }
+        // public string LastName { get; set; }
         public DateTime DateCreated { get; set; }
         public bool NonProfitUser { get; set; }
     }
