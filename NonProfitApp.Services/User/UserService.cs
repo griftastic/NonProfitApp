@@ -27,11 +27,12 @@ namespace NonProfitApp.Services.User
             var entity = new UserEntity
             {
                 Email = model.Email,
+                Password = model.Password,
                 DateCreated = DateTime.Now
             };
 
-            // var passwordHasher = new PasswordHasher<UserEntity>();
-            // entity.Password = passwordHasher.HashPassword(entity,model.Password);
+            var passwordHasher = new PasswordHasher<UserEntity>();
+            entity.Password = passwordHasher.HashPassword(entity,model.Password);
 
             _context.Users.Add(entity);
             var numberOfChanges = await _context.SaveChangesAsync();
@@ -49,8 +50,6 @@ namespace NonProfitApp.Services.User
             {
                 Id = entity.Id,
                 Email = entity.Email,
-                FirstName = entity.FirstName,
-                LastName = entity.LastName,
                 DateCreated = entity.DateCreated
             };
             return userDetail;

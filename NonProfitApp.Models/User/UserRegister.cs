@@ -18,6 +18,10 @@ namespace NonProfitApp.Models.User
         public string ConfirmPassword { get; set; }
         [Required]
         public bool NonProfitUser { get; set; }
+
+        // Make any references to FirstName and LastName are either in or out
+        // Delete migrations folder and database and try rerunning migrations
+        // Update the database
         
     }
 }
