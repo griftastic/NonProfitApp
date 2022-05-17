@@ -14,5 +14,6 @@ namespace NonProfitApp.Data
         {
         }
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<EventEntity> Events { get; set; }
     }
 }

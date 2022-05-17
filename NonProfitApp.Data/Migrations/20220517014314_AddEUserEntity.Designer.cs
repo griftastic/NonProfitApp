@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NonProfitApp.Data;
 
@@ -11,9 +12,10 @@ using NonProfitApp.Data;
 namespace NonProfitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220517014314_AddEUserEntity")]
+    partial class AddEUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,8 +57,6 @@ namespace NonProfitApp.Data.Migrations
 
                     b.HasIndex("EventEntityEventId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Events");
                 });
 
@@ -92,14 +92,6 @@ namespace NonProfitApp.Data.Migrations
                     b.HasOne("NonProfitApp.Data.Entities.EventEntity", null)
                         .WithMany("Events")
                         .HasForeignKey("EventEntityEventId");
-
-                    b.HasOne("NonProfitApp.Data.Entities.UserEntity", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("NonProfitApp.Data.Entities.EventEntity", b =>
