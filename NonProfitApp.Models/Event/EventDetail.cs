@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NonProfitApp.Models.Event
 {
-    public class EventListItem
+    public class EventDetail
     {
         public int EventId { get; set; }
         // public string NonProfitName { get; set; }
