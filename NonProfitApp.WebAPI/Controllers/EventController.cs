@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NonProfitApp.Services.Event;
+using NonProfitApp.Models.Event;
 using Microsoft.AspNetCore.Authorization;
 
 
@@ -36,7 +37,9 @@ namespace NonProfitApp.WebAPI.Controllers
                 return BadRequest(ModelState);
 
             if (await _eventService.CreateEventAsync(request))
-                return Ok("Event could not be created.");
+                return Ok("Note created successfully");
+
+            return BadRequest("Note could not be created.");
         }
     }
 }

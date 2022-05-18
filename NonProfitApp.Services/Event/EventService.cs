@@ -34,7 +34,8 @@ namespace NonProfitApp.Services.Event
                 EventName = request.EventName,
                 EventDescription = request.EventDescription,
                 EventDate = request.EventDate,
-                EventAddress = request.EventAddress
+                EventAddress = request.EventAddress,
+                UserId = _userId
             };
 
             _dbContext.Events.Add(eventEntity);
@@ -52,7 +53,9 @@ namespace NonProfitApp.Services.Event
                     EventId = entity.EventId,
                     // NonProfitName = entity.NonProfitName,
                     EventName = entity.EventName,
-                    EventDate = entity.EventDate
+                    EventDescription = entity.EventDescription,
+                    EventDate = entity.EventDate,
+                    EventAddress = entity.EventAddress
                 })
                 .ToListAsync();
 
