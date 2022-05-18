@@ -61,5 +61,29 @@ namespace NonProfitApp.Services.Event
 
             return events;
         }
+
+    public async Task<EventDetail> GetEventByIdAsync(int eventId)
+    {
+        // Find the first note that has the given Id and an UserId that matches the requesting userId
+        var eventEntity = await _dbContext.Events
+            .FirstOrDefaultAsync(e =>
+                e.UserId == eventId && e.UserId == _userId
+                );
+
+        // If eventEntity is null then return null, otherwise initialize and retun a new EventDetail
+        return eventEntity is null ? null : new EventDetail
+        {
+            EventId = eventEntity.EventId,
+            EventName = eventEntity.EventName,
+            EventDescription = eventEntity.EventDescription,
+            EventDate = eventEntity.EventDate,
+            EventAddress = eventEntity.EventAddress
+        };
+    }
+
+        public Task<EventDetail> GetNoteByIdAsync(int noteId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

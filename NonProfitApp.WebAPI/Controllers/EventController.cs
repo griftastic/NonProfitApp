@@ -41,5 +41,15 @@ namespace NonProfitApp.WebAPI.Controllers
 
             return BadRequest("Note could not be created.");
         }
+    // Get api/Event/6
+    [HttpGet("{eventId:int}")]
+    public async Task<IActionResult> GetEventById([FromRoute] int eventId)
+    {
+        var detail = await _eventService.GetEventByIdAsync(eventId);
+
+        return detail is not null
+            ? Ok(detail)
+            : NotFound();
+    }
     }
 }

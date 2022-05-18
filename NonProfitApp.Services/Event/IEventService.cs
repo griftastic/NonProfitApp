@@ -10,5 +10,6 @@ namespace NonProfitApp.Services.Event
     {
         Task<bool> CreateEventAsync(EventCreate request);
         Task<IEnumerable<EventListItem>> GetAllEventsAsync();
+        Task<EventDetail> GetEventByIdAsync(int noteId);
     }
 }
