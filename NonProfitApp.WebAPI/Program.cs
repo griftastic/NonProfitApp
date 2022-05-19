@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using NonProfitApp.Services.User;
 using NonProfitApp.Services.Token;
+// Doc
+using NonProfitApp.Services.Note;
 using NonProfitApp.Data;
 using NonProfitApp.Services.Event;
 using System.Text;
@@ -17,12 +19,13 @@ builder.Services.AddHttpContextAccessor();
 
 // Add connection string and DbContext setup"
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer());
-        //  builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddHttpContextAccessor();
 
 // Add User Service/Interface for Dependency Injection Here
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<INoteService, NoteService>();
 builder.Services.AddScoped<IEventService, EventService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
