@@ -11,6 +11,7 @@ namespace NonProfitApp.Services.Note
 {
     public interface INoteService
     {   
+        Task<bool> CreateNoteAsync(NoteCreate request);
         Task<IEnumerable<NoteListItem>> GetAllNotesAsync();
         public class NoteService : INoteService
         {
@@ -25,6 +26,22 @@ namespace NonProfitApp.Services.Note
                     throw new Exception("Attempted to build NoteService without User Id claim.");
                 _dbContext = dbContext;
              }
+             public async Task<bool> CreateNoteAsync(NoteCreate request)
+             {
+                 var noteEntity = new NoteEntity
+                 {
+                     Type = request.Title,
+                     Content = request.Content,
+                     CreateUtc = DateTimeOffset.Now,
+                     OwnerId = _userID
+                 };
+
+                 _dbContext.Notes.Add(noteEntity);
+
+                 var numberOfChanges = await _dbContext.SaveChangesAsync();
+                 rreturn numberOfChanges ==1;
+             }
+             
              [HttpGet]
              public async Task<IActionResults> Get AllNotes()
              {
