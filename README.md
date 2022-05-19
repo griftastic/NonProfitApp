@@ -5,4 +5,14 @@ The NonProfit App is a local API app that utilizes Foreign Keys and Endpoints to
 Here are the different endpoints we have.
 
 ## NonProfit App Endpoints
-- [Get ]
+
+### Users
+- [RegisterUser](./Endpoints/User/RegisterUser.md)
+- [GetUserById](./Endpoints/User/GetUserById.md)
+
+### Events
+- [CreateEvent](./Endpoints/Event/CreateEvent.md)
+- [CreateEvent](./Endpoints/Event/CreateEvent.md)
+- [CreateEvent](./Endpoints/Event/CreateEvent.md)
+- [CreateEvent](./Endpoints/Event/CreateEvent.md)
+- [CreateEvent](./Endpoints/Event/CreateEvent.md)
