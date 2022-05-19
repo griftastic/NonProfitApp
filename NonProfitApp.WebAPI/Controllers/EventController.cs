@@ -51,5 +51,25 @@ namespace NonProfitApp.WebAPI.Controllers
             ? Ok(detail)
             : NotFound();
     }
+
+    // PUT api/Event
+    [HttpPut]
+    public async Task<IActionResult> UpdateEventById([FromBody] EventUpdate request)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        return await _eventService.UpdateEventAsync(request)
+            ? Ok("Event updated successfully")
+            : BadRequest("Event could not be updated.");
+    }
+
+    [HttpDelete("{eventId:int}")]
+    public async Task<IActionResult> DeleteEvent([FromRoute] int eventId)
+    {
+        return await _eventService.DeleteEventAsync(eventId)
+        ? Ok($"Event {eventId} was deleted successfully.")
+        : BadRequest($"Event {eventId} could not be deleted.");
+    }
     }
 }
