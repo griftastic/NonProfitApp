@@ -12,7 +12,12 @@ Here are the different endpoints we have.
 
 ### Events
 - [CreateEvent](./Endpoints/Event/CreateEvent.md)
-- [CreateEvent](./Endpoints/Event/CreateEvent.md)
-- [CreateEvent](./Endpoints/Event/CreateEvent.md)
-- [CreateEvent](./Endpoints/Event/CreateEvent.md)
-- [CreateEvent](./Endpoints/Event/CreateEvent.md)
+- [GetAllEvents](./Endpoints/Event/GetAllEvents.md)
+- [GetEventById](./Endpoints/Event/GetEventById.md)
+- [EditEvent](./Endpoints/Event/EditEvent.md)
+- [DeleteEvent](./Endpoints/Event/DeleteEvent.md)
+
+### Volunteer Skills
+
+
+### NonProfit
