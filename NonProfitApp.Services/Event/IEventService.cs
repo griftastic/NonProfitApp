@@ -11,5 +11,7 @@ namespace NonProfitApp.Services.Event
         Task<bool> CreateEventAsync(EventCreate request);
         Task<IEnumerable<EventListItem>> GetAllEventsAsync();
         Task<EventDetail> GetEventByIdAsync(int noteId);
+        Task<bool> UpdateEventAsync(EventUpdate request);
+        Task<bool> DeleteEventAsync(int eventId);
     }
 }
