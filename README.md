@@ -2,7 +2,7 @@
 
 The NonProfit App is a local API app that utilizes Foreign Keys and Endpoints to help NonProfit Companies find Volunteers based on the skills they have.
 
-Here are the different endpoints we have.
+Here are the endpoints we used to accomplish our goals.
 
 ## NonProfit App Endpoints
 
@@ -18,6 +18,7 @@ Here are the different endpoints we have.
 - [DeleteEvent](./Endpoints/Event/DeleteEvent.md)
 
 ### Volunteer Skills
+
 
 
 ### NonProfit
