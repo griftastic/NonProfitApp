@@ -1,17 +1,23 @@
 # Connection String
 
-In order to start using this app on your localserver, you will need to clone this repository into Visual Studio Code (Henceforth referred to as VSC).
+This app requires the use of a local SQL Server. You should have a localhost server set up all ready.
 
-1. Open a blank VSC file.
-2. Open a new terminal.
-3. Type in:
+For your convenience, we have provided a filled out connection string within ./NonProfitApp.WebAPI/Program.cs
+
+1. Navigate to ./NonProfitApp.WebAPI.Program.cs
+2. Locate the connection string on line 19.
+
+It should look like this:
 ```
-git clone https://github.com/griftastic/NonProfitApp
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password=PASSWORD"));
+
 ```
+3. Replace 'PASSWORD' with your personal SQL password.
 
-At this point, you should have the exact code from the 'Main' branch on your VSC.
-
+At this point, the connection string is all ready to go for your app.
 ---
-[Next](./ConnectionString.md)
+[Next](./Migrations.md)
 
 [Back to home](../../README.md)
+
+
