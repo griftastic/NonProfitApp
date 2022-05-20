@@ -51,5 +51,23 @@ namespace NonProfitApp.WebAPI.Controllers
             ? Ok(detail)
             : NotFound();
     }
+    [HttpPut]
+    public async Task<IActionResult> UpdateNPEntityById([FromBody] NPEntityUpdate request)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        return await _noteService.UpdateNPEntityAsync(request)
+            ? Ok ("NPEntity update successfully.")
+            : BadRequest("NPEntity could not be updated.")
+
+    }
+    [HttpDelete("{NPEntityId:int}")]
+    public async Task<IActionResult> DeleteNote([FromRoute] int NPEntityId)
+        {
+            return await _NPEntityService.DeleteNPEntityAsync(NPEntityId)
+                ? Ok ($ "Note {NPEntityId} was deleted successfully.")
+                : BadRequest ($ "Note {NPEntityId} could not be deleted.")
+        }
     }
 }

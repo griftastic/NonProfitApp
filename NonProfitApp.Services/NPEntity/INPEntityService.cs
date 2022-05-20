@@ -8,11 +8,15 @@ using System.Security.Claims;
 using NonProfitApp.Data;
 
 namespace NonProfitApp.Services.Note
+
 {
     public interface INoteService
     {   
-        Task<bool> CreateNoteAsync(NoteCreate request);
-        Task<IEnumerable<NoteListItem>> GetAllNotesAsync();
+        Task<bool> DeleteNPEntityAsync(int NPEntityId);
+        Task<bool>UpdateNPEntityAsync(NPEventUpdate request);
+        Task<bool> CreateNPENtityAsync(NPEntityCreate request);
+        Task<IEnumerable<NPEntityListItem>> GetAllNotesAsync();
+        Task<NoteDetail> GetNPEntityByIdAsnc(int userId);
         public class NoteService : INoteService
         {
             private readonly int _userId;
@@ -41,7 +45,7 @@ namespace NonProfitApp.Services.Note
                  var numberOfChanges = await _dbContext.SaveChangesAsync();
                  rreturn numberOfChanges ==1;
              }
-             
+
              [HttpGet]
              public async Task<IActionResults> Get AllNotes()
              {
@@ -60,8 +64,46 @@ namespace NonProfitApp.Services.Note
                     })
                     .ToListAsync();
                 return notes;
+            public async Task<NoteDetail> GetNoteIdAsync(int noteId)
+            {
+                var noteEntity = await _dbContext.Notes
+                    .FirstOrDefultAsync(e =>
+                    e.Id && e.OwnerId == _userId
+                    );
 
-             }
-         }
+            return noteEntity is null ? null : new NoteDetail
+            {
+                Id = noteIdEntity.Id,
+                Title = noteEntity.Title,
+                Content = noteEntity.Content,
+                CreatedUtc = noteEntity.CreatedUtc,
+                ModifiedUtc = noteEntity.ModifiedUtc,
+            };
+            // Get api/ NPEntity/5
+            [HttpGet("{UserId:int")]
+            public async Task<IActionResult> GetNPEntityById([FromRoute] int UserId)
+            {
+                var details = await _NPEntityService.GetNPEntityByIdAsync(UserId);
+                return details in not null
+                    ? Ok (detail)
+                    : DllNotFoundException ();
+            }
+            public async Task<bool> UpdateNPEntityAsync(NPEntityUpdate request)
+            {
+                var NPEntityEntity = await _dbContext.NPEntity.FindAsync(request.Id);
+
+            if (NPEntityEntity?.OwnedId != _userId)
+                return false;
+            
+            NPEntityEntity.TItle = request.Title;
+            NPEntityEntity.Content = request.Content;
+            NPEntityEntity.ModifiedUtc = DateTimeOffset.Now;
+
+            var numberOfChanges = await _dbContext.SaveChangesAsync();
+            return numberOfChanges ==1;
+            }
+            }
+        }
+        }
     }
 }
