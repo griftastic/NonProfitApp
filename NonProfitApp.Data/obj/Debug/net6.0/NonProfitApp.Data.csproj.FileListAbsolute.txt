@@ -1,0 +1,14 @@
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\bin\Debug\net6.0\NonProfitApp.Data.deps.json
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\bin\Debug\net6.0\NonProfitApp.Data.runtimeconfig.json
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\bin\Debug\net6.0\NonProfitApp.Data.dll
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\bin\Debug\net6.0\NonProfitApp.Data.pdb
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.csproj.AssemblyReference.cache
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.AssemblyInfoInputs.cache
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.AssemblyInfo.cs
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.csproj.CoreCompileInputs.cache
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.dll
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\refint\NonProfitApp.Data.dll
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.pdb
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\NonProfitApp.Data.genruntimeconfig.cache
+D:\EFA Proj\NonProfitApp\NonProfitApp.Data\obj\Debug\net6.0\ref\NonProfitApp.Data.dll
