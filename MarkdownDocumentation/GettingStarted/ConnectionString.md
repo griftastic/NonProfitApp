@@ -15,9 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 3. Replace 'PASSWORD' with your personal SQL password.
 
 At this point, the connection string is all ready to go for your app.
+
 ---
 [Next](./Migrations.md)
 
 [Back to home](../../README.md)
-
-
