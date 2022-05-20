@@ -6,4 +6,4 @@ This endpoint deletes an event using that event's unique eventId integer.
 ## Use the following link with a DELETE endpoint to delete an event:
 ### https://localhost:5001/api/Event/[eventId]
 
-[Back to home](../../README.md)
+[Back to home](../../../README.md)

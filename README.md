@@ -4,22 +4,28 @@ The NonProfit App is a local API app that utilizes Foreign Keys and Endpoints to
 
 Here are the endpoints we used to accomplish our goals.
 
+## Getting Started
+- [Cloning](./MarkdownDocumentation/GettingStarted/Cloning.md)
+- [ConnectionString](./MarkdownDocumentation/GettingStarted/ConnectionString.md)
+- [Migrations](./MarkdownDocumentation/GettingStarted/Migrations.md)
+- [PostmanIntegration](./MarkdownDocumentation/GettingStarted/PostmanIntegration.md)
+
 
 ## NonProfit App Endpoints
 
 ### Users
-- [RegisterUser](./Endpoints/User/RegisterUser.md)
-- [GetUserById](./Endpoints/User/GetUserById.md)
+- [RegisterUser](./MarkdownDocumention/Endpoints/User/RegisterUser.md)
+- [GetUserById](./MarkdownDocumention/Endpoints/User/GetUserById.md)
 
 ### Token
-- [GetToken](./Endpoints/Token/GetToken.md)
+- [GetToken](./MarkdownDocumention/Endpoints/Token/GetToken.md)
 
 ### Events
-- [CreateEvent](./Endpoints/Event/CreateEvent.md)
-- [GetAllEvents](./Endpoints/Event/GetAllEvents.md)
-- [GetEventById](./Endpoints/Event/GetEventById.md)
-- [EditEvent](./Endpoints/Event/EditEvent.md)
-- [DeleteEvent](./Endpoints/Event/DeleteEvent.md)
+- [CreateEvent](./MarkdownDocumention/Endpoints/Event/CreateEvent.md)
+- [GetAllEvents](./MarkdownDocumention/Endpoints/Event/GetAllEvents.md)
+- [GetEventById](./MarkdownDocumention/Endpoints/Event/GetEventById.md)
+- [EditEvent](./MarkdownDocumention/Endpoints/Event/EditEvent.md)
+- [DeleteEvent](./MarkdownDocumention/Endpoints/Event/DeleteEvent.md)
 
 ### Volunteer Skills
 
