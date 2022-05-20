@@ -14,18 +14,18 @@ Here are the endpoints we used to accomplish our goals.
 ## NonProfit App Endpoints
 
 ### Users
-- [RegisterUser](./MarkdownDocumention/Endpoints/User/RegisterUser.md)
-- [GetUserById](./MarkdownDocumention/Endpoints/User/GetUserById.md)
+- [RegisterUser](./MarkdownDocumentation/Endpoints/User/RegisterUser.md)
+- [GetUserById](./MarkdownDocumentation/Endpoints/User/GetUserById.md)
 
 ### Token
-- [GetToken](./MarkdownDocumention/Endpoints/Token/GetToken.md)
+- [GetToken](./MarkdownDocumentation/Endpoints/Token/GetToken.md)
 
 ### Events
-- [CreateEvent](./MarkdownDocumention/Endpoints/Event/CreateEvent.md)
-- [GetAllEvents](./MarkdownDocumention/Endpoints/Event/GetAllEvents.md)
-- [GetEventById](./MarkdownDocumention/Endpoints/Event/GetEventById.md)
-- [EditEvent](./MarkdownDocumention/Endpoints/Event/EditEvent.md)
-- [DeleteEvent](./MarkdownDocumention/Endpoints/Event/DeleteEvent.md)
+- [CreateEvent](./MarkdownDocumentation/Endpoints/Event/CreateEvent.md)
+- [GetAllEvents](./MarkdownDocumentation/Endpoints/Event/GetAllEvents.md)
+- [GetEventById](./MarkdownDocumentation/Endpoints/Event/GetEventById.md)
+- [EditEvent](./MarkdownDocumentation/Endpoints/Event/EditEvent.md)
+- [DeleteEvent](./MarkdownDocumentation/Endpoints/Event/DeleteEvent.md)
 
 ### Volunteer Skills
 
