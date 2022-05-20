@@ -4,6 +4,7 @@ The NonProfit App is a local API app that utilizes Foreign Keys and Endpoints to
 
 Here are the endpoints we used to accomplish our goals.
 
+
 ## NonProfit App Endpoints
 
 ### Users
