@@ -6,7 +6,7 @@ It will create the event and provide the event itself with its own unique eventI
 
 
 ## Use the following link with a POST endpoint to create an event:
-### https://localhost:5001/api/event
+### https://localhost:5001/api/Event
 
 Here are the body parameters required to post an event (in json format):
 

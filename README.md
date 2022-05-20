@@ -11,6 +11,9 @@ Here are the endpoints we used to accomplish our goals.
 - [RegisterUser](./Endpoints/User/RegisterUser.md)
 - [GetUserById](./Endpoints/User/GetUserById.md)
 
+## Token
+- [GetToken](./Endpoints/Token/GetToken.md)
+
 ### Events
 - [CreateEvent](./Endpoints/Event/CreateEvent.md)
 - [GetAllEvents](./Endpoints/Event/GetAllEvents.md)
