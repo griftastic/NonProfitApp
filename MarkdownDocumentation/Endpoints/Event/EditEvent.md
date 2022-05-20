@@ -19,4 +19,5 @@ Here are the body parameters required to edit an event (in json format):
 }
 ```
 
+---
 [Back to home](../../../README.md)

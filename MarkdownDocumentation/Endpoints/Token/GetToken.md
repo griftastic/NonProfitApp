@@ -19,4 +19,5 @@ Here are the body parameters required to create a token (in json format):
 }
 ```
 
+---
 [Back to home](../../../README.md)
