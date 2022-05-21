@@ -18,6 +18,6 @@ dotnet ef database update -p NonProfit.Data -s NonProfitApp.WebAPI
 Your SQL Database should now have all of the entities present.
 
 ---
-[Next](./PostmanIntegration.md)
+[Back](./ConnectionString.md) | [Next](./PostmanIntegration.md)
 
 [Back to home](../../README.md)

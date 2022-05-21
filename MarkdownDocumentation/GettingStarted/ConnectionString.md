@@ -17,6 +17,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 At this point, the connection string is all ready to go for your app.
 
 ---
-[Next](./Migrations.md)
+[Back] (./Cloning.md) | [Next](./Migrations.md)
 
 [Back to home](../../README.md)

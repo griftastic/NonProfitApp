@@ -1,4 +1,4 @@
-#PostmanIntegration
+# PostmanIntegration
 
 Now that you have your SQL Database updated, you need to bring in the functionality.
 
@@ -13,6 +13,8 @@ Click [here](https://learning.postman.com/docs/getting-started/importing-and-exp
 
 
 You are now ready to start using our NonProfit App!
+
 ---
+[Back](./Migrations.md)
 
 [Back to home](../../README.md)
