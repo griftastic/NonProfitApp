@@ -1,4 +1,4 @@
-# PostmanIntegration
+# Postman Integration
 
 Now that you have your SQL Database updated, you need to bring in the functionality.
 
