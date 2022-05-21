@@ -34,3 +34,11 @@ Here are the endpoints we used to accomplish our goals.
 - [EditNPEntity](./MarkdownDocumentation/Endpoints/NPEntity/EditNPEntity.md)
 - [DeleteNPEntity](./MarkdownDocumentation/Endpoints/NPEntity/DeleteNPEntity.md)
 
+### Volunteer
+- [CreateVolunteer](./MarkdownDocumentation/Endpoints/Volunteer/CreateVolunteer.md)
+- [GetAllVolunteers](./MarkdownDocumentation/Endpoints/Volunteer/GetAllVolunteers.md)
+- [GetNPVolunteerById](./MarkdownDocumentation/Endpoints/Volunteer/GetVolunteerById.md)
+- [EditVolunteer](./MarkdownDocumentation/Endpoints/Volunteer/UpdateVolunteer.md)
+
+
+

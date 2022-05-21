@@ -19,7 +19,7 @@ builder.Services.AddHttpContextAccessor();
 
 // Add connection string and DbContext setup"
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password="));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password=PASSWORD"));
         //  builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add User Service/Interface for Dependency Injection Here
