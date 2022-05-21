@@ -60,6 +60,38 @@ namespace NonProfitApp.Data.Migrations
                     b.ToTable("Events");
                 });
 
+            modelBuilder.Entity("NonProfitApp.Data.Entities.NonPEntity", b =>
+                {
+                    b.Property<int>("NPEntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NPEntityId"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("CreatedUtc")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset?>("ModifiedUtc")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("NPEntityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("NPEntities");
+                });
+
             modelBuilder.Entity("NonProfitApp.Data.Entities.UserEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -93,6 +125,17 @@ namespace NonProfitApp.Data.Migrations
                         .WithMany("Events")
                         .HasForeignKey("EventEntityEventId");
 
+                    b.HasOne("NonProfitApp.Data.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NonProfitApp.Data.Entities.NonPEntity", b =>
+                {
                     b.HasOne("NonProfitApp.Data.Entities.UserEntity", "User")
                         .WithMany()
                         .HasForeignKey("UserId")

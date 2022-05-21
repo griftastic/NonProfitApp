@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace NonProfitApp.WebAPI.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
         public class EventController : ControllerBase
@@ -23,6 +23,7 @@ namespace NonProfitApp.WebAPI.Controllers
 
     // GET api/Event
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<EventListItem>), 200)]
         public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();
@@ -37,9 +38,9 @@ namespace NonProfitApp.WebAPI.Controllers
                 return BadRequest(ModelState);
 
             if (await _eventService.CreateEventAsync(request))
-                return Ok("Note created successfully");
+                return Ok("Event created successfully");
 
-            return BadRequest("Note could not be created.");
+            return BadRequest("Event could not be created.");
         }
     // Get api/Event/6
     [HttpGet("{eventId:int}")]
@@ -50,6 +51,26 @@ namespace NonProfitApp.WebAPI.Controllers
         return detail is not null
             ? Ok(detail)
             : NotFound();
+    }
+
+    // PUT api/Event
+    [HttpPut]
+    public async Task<IActionResult> UpdateEventById([FromBody] EventUpdate request)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        return await _eventService.UpdateEventAsync(request)
+            ? Ok("Event updated successfully")
+            : BadRequest("Event could not be updated.");
+    }
+
+    [HttpDelete("{eventId:int}")]
+    public async Task<IActionResult> DeleteEvent([FromRoute] int eventId)
+    {
+        return await _eventService.DeleteEventAsync(eventId)
+        ? Ok($"Event {eventId} was deleted successfully.")
+        : BadRequest($"Event {eventId} could not be deleted.");
     }
     }
 }

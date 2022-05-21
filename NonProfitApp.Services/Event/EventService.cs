@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using NonProfitApp.Data;
 using NonProfitApp.Data.Entities;
 using NonProfitApp.Models.Event;
@@ -67,7 +68,7 @@ namespace NonProfitApp.Services.Event
         // Find the first note that has the given Id and an UserId that matches the requesting userId
         var eventEntity = await _dbContext.Events
             .FirstOrDefaultAsync(e =>
-                e.UserId == eventId && e.UserId == _userId
+                e.EventId == eventId && e.UserId == _userId
                 );
 
         // If eventEntity is null then return null, otherwise initialize and retun a new EventDetail
@@ -80,10 +81,32 @@ namespace NonProfitApp.Services.Event
             EventAddress = eventEntity.EventAddress
         };
     }
-
-        public Task<EventDetail> GetNoteByIdAsync(int noteId)
+        public async Task<bool> UpdateEventAsync(EventUpdate request)
         {
-            throw new NotImplementedException();
+            var eventEntity = await _dbContext.Events.FindAsync(request.Id);
+
+            if(eventEntity?.UserId != _userId)
+                return false;
+
+                eventEntity.EventName = request.EventName;
+                eventEntity.EventDescription = request.EventDescription;
+                eventEntity.EventDate = request.EventDate;
+                eventEntity.EventAddress = request.EventAddress;
+
+                var numberOfChanges = await _dbContext.SaveChangesAsync();
+
+                return numberOfChanges == 1;
+        }
+
+        public async Task<bool> DeleteEventAsync(int eventId)
+        {
+            var eventEntity = await _dbContext.Events.FindAsync(eventId);
+
+            if(eventEntity?.UserId != _userId)
+                return false;
+
+                _dbContext.Events.Remove(eventEntity);
+                return await _dbContext.SaveChangesAsync() == 1;
         }
     }
 }

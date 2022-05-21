@@ -1,10 +1,10 @@
 using System;
 
-namespace NonProfitApp.Models.Note
+namespace NonProfitApp.Models.NPEntity
 {
-    public class NoteDetail
+    public class NPEntityDetail
     {
-        public int Id { get; set; }
+        public int UserId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }

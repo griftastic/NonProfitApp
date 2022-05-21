@@ -9,22 +9,15 @@ namespace NonProfitApp.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, DbSet<NPEnitiy> nonProfit)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        {
-            NonProfit = nonProfit;
-        }
-        public DbSet<UserEntity> Users { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-       
+            {
+
+            }
+        public DbSet<UserEntity> Users { get; set; }       
         
         public DbSet<EventEntity> Events { get; set; }
+        public DbSet<NonPEntity> NPEntities { get; set; }
         
-
-        public ApplicationDbContext(DbSet<NPEnitiy> nonProfit)
-        {
-            NonProfit = nonProfit;
-        }
-        public DbSet<NPEnitiy> NonProfit { get; set; }
     }
 }

@@ -1,25 +1,28 @@
 using System;
+
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace NonProfitApp.Data.Entities
 {
-    public class NPEnitiy
+    public class NonPEntity
     {
         [Key]
-        public int NonProfitId { get; set;}
-        
+        public int NPEntityId { get; set; }
         [Required]
-        [ForeignKey (nameof (User))]
+        [ForeignKey(nameof(User))]
         public int UserId { get; set; }
-        public UserEntity User;
-
-        public int Mission { get; set;}
-
+        public UserEntity User { get; set; }
         [Required]
-        public int TaxDeductable {get; set;}
-        
+        public string Title { get; set; }
         [Required]
-        public int Email { get; set;}
+        public string Content { get; set; }
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
+      

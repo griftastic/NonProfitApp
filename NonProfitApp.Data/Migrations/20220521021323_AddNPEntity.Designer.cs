@@ -12,8 +12,8 @@ using NonProfitApp.Data;
 namespace NonProfitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220518005947_NPEntity")]
-    partial class NPEntity
+    [Migration("20220521021323_AddNPEntity")]
+    partial class AddNPEntity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,29 +62,36 @@ namespace NonProfitApp.Data.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("NonProfitApp.Data.Entities.NPEnitiy", b =>
+            modelBuilder.Entity("NonProfitApp.Data.Entities.NonPEntity", b =>
                 {
-                    b.Property<int>("NonProfitId")
+                    b.Property<int>("NPEntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NonProfitId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NPEntityId"), 1L, 1);
 
-                    b.Property<int>("Email")
-                        .HasColumnType("int");
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Mission")
-                        .HasColumnType("int");
+                    b.Property<DateTimeOffset>("CreatedUtc")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<int>("TaxDeductable")
-                        .HasColumnType("int");
+                    b.Property<DateTimeOffset?>("ModifiedUtc")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("NonProfitId");
+                    b.HasKey("NPEntityId");
 
-                    b.ToTable("NonProfit");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("NPEntities");
                 });
 
             modelBuilder.Entity("NonProfitApp.Data.Entities.UserEntity", b =>
@@ -120,6 +127,17 @@ namespace NonProfitApp.Data.Migrations
                         .WithMany("Events")
                         .HasForeignKey("EventEntityEventId");
 
+                    b.HasOne("NonProfitApp.Data.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NonProfitApp.Data.Entities.NonPEntity", b =>
+                {
                     b.HasOne("NonProfitApp.Data.Entities.UserEntity", "User")
                         .WithMany()
                         .HasForeignKey("UserId")

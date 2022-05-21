@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace NonProfitApp.Models.Note
+namespace NonProfitApp.Models.NPEntity
 {
-    public class NoteCreate
+    public class NPEntityCreate
+
     {
         [Required]
         [MinLength(2, ErrorMessage = "{0} must be at least {1} characters long.")]

@@ -1,10 +1,15 @@
 using System;
-namespace NonProfitApp.Models.Note
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace NonProfitApp.Models.NPEntity
 {
-    public class NoteListItem
+    public class NPEntityListItem
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Content { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
     }
 }

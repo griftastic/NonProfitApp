@@ -40,7 +40,8 @@ namespace NonProfitApp.WebAPI.Controllers
             return BadRequest("User could not be registered.");
         }
         
-        [Authorize, HttpGet("{userId:int}")]
+        // [Authorize]
+        [HttpGet("{userId:int}")]
         public async Task<IActionResult> GetById([FromRoute] int userId)
         {
             var userDetail = await _userService.GetUserByIdAsync(userId);
