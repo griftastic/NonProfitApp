@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "0b5200ac-3ac3-481b-adcf-a26237c105c7",
+		"name": "NonProfitApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Event Requests",
+			"item": [
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/Event",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nonProfitName\": \"Taco\",\n    \"eventName\": \"Armond's Bday\",\n    \"eventDescription\": \"Bring me cakeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Event",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEventById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Event/7",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Event",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"nonProfitName\": \"Griff\",\n    \"eventName\": \"Doc's Bday\",\n    \"eventDescription\": \"Bring me caeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeekeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee989787eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Event",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/Event/4",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Event",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Requests",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"notetaker9@elevenfifty.org\",\n    \"password\": \"Test1!\",\n    \"confirmPassword\": \"Test1!\",\n    \"nonProfitUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/User/Register",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"User",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/User/6",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"User",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"notetaker1@elevenfifty.org\",\n    \"password\": \"Test1!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Token",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NPEntity Requests",
+			"item": [
+				{
+					"name": "Create NPEntity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/NPEntity",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"NPEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllNPEntities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/NPEntity",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"NPEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNPEntityById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/NPEntity/1",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"NPEntity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateNPEntity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"title\": \"string1\",\n  \"content\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/NPEntity",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"NPEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteNPEntity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/NPEntity/1",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"NPEntity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjYiLCJFbWFpbCI6Im5vdGV0YWtlcjFAZWxldmVuZmlmdHkub3JnIiwibmJmIjoxNjUzMDk4NTM4LCJleHAiOjE2NTQzMDgxMzgsImlhdCI6MTY1MzA5ODUzOCwiaXNzIjoibG9jYWxob3N0U2VydmVyIiwiYXVkIjoibG9jYWxob3N0Q2xpZW50In0.KexjovMXdlP3gUEmxIZWXSyV-epzWa2Ontn6zPLtKUg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseApiUrl",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
