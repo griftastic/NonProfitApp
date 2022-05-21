@@ -15,6 +15,5 @@ namespace NonProfitApp.Services.NPEntity
         Task<NPEntityDetail> GetNPEntityByIdAsync(int userId);
         Task<bool>UpdateNPEntityAsync(NPEntityUpdate request);
         Task<bool> DeleteNPEntityAsync(int nPEntityId);
-
     }
 }

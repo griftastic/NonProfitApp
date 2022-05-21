@@ -1,4 +1,5 @@
 using System;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,3 +25,4 @@ namespace NonProfitApp.Data.Entities
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
+      

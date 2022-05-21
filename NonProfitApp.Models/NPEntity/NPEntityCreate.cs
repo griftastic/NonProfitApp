@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace NonProfitApp.Models.NPEntity
 {
     public class NPEntityCreate
+
     {
         [Required]
         [MinLength(2, ErrorMessage = "{0} must be at least {1} characters long.")]
