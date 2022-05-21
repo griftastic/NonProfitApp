@@ -38,9 +38,9 @@ namespace NonProfitApp.WebAPI.Controllers
                 return BadRequest(ModelState);
 
             if (await _eventService.CreateEventAsync(request))
-                return Ok("Note created successfully");
+                return Ok("Event created successfully");
 
-            return BadRequest("Note could not be created.");
+            return BadRequest("Event could not be created.");
         }
     // Get api/Event/6
     [HttpGet("{eventId:int}")]
