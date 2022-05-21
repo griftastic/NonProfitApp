@@ -3,6 +3,7 @@ using  System.Security.Claims;
 using NonProfitApp.Data;
 using NonProfitApp.Models.Volunteer;
 using NonProfitApp.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace NonProfitApp.Services.Volunteer
 {
@@ -22,8 +23,8 @@ namespace NonProfitApp.Services.Volunteer
         }
         public async Task<IEnumerable<VolunteerListItems>> GetAllVolunteersAsync()
         {
-            var notes = _dbContext.Volunteers
-            .Where(entity => entity.VolunteerId == _volunteerId)
+            var volunteers = _dbContext.Volunteers
+            .Where(entity => entity.UserId == _volunteerId)
             .Select(entity => new VolunteerListItems
             {
                 VolunteerId = entity.VolunteerId,
@@ -32,7 +33,7 @@ namespace NonProfitApp.Services.Volunteer
                 
             })
             .ToList();
-        return notes;
+        return volunteers;
         }
         public async Task<bool> CreateVolunteerAsync(VolunteerCreate request)
         {
@@ -40,7 +41,8 @@ namespace NonProfitApp.Services.Volunteer
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
-                VolunteerId = _volunteerId
+                Email = request.Email,
+                UserId = _volunteerId
             };
             _dbContext.Volunteers.Add(volunteerEntity);
             
@@ -62,7 +64,7 @@ namespace NonProfitApp.Services.Volunteer
 public async Task<bool> UpdateVolunteerAsync(VolunteerUpdate request)
 {
     var volunteerEntity = await _dbContext.Volunteers.FindAsync(request.volunteerId);
-    if(volunteerEntity?.VolunteerId != _volunteerId)
+    if(volunteerEntity?.UserId != _volunteerId)
     return false;
     volunteerEntity.FirstName = request.FirstName;
     volunteerEntity.LastName = request.LastName;

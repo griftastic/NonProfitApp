@@ -33,8 +33,8 @@ namespace NonProfitApp.WebAPI.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             if(await _volunteerService.CreateVolunteerAsync(request))
-            return Ok("Note created Successfully.");
-        return BadRequest("Notes could not be created.");
+            return Ok("Volunteer created Successfully.");
+        return BadRequest("Volunteers could not be created.");
         }
         [HttpGet("{volunteerId:int}")]
         public async Task<IActionResult> GetVolunteerById([FromRoute] int volunteerId)
@@ -50,8 +50,8 @@ namespace NonProfitApp.WebAPI.Controllers
         if(!ModelState.IsValid)
                 return BadRequest(ModelState);
         return await _volunteerService.UpdateVolunteerAsync(request)
-        ?Ok("Note Updated Successfully")
-        :BadRequest("Note couldnt be updated");
+        ?Ok("Volunteer Updated Successfully")
+        :BadRequest("Volunteer couldnt be updated");
         }
     } 
 }

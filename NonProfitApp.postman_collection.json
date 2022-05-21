@@ -32,7 +32,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nonProfitName\": \"Taco\",\n    \"eventName\": \"Armond's Bday\",\n    \"eventDescription\": \"Bring me cakeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
+							"raw": "{\n    \"nonProfitName\": \"Tacos\",\n    \"eventName\": \"Armond's Bday\",\n    \"eventDescription\": \"Bring me jkhhcakeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -69,13 +69,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseApiUrl}}/Event/7",
+							"raw": "{{baseApiUrl}}/Event/8",
 							"host": [
 								"{{baseApiUrl}}"
 							],
 							"path": [
 								"Event",
-								"7"
+								"8"
 							]
 						}
 					},
@@ -88,7 +88,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 4,\n    \"nonProfitName\": \"Griff\",\n    \"eventName\": \"Doc's Bday\",\n    \"eventDescription\": \"Bring me caeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeekeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee989787eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
+							"raw": "{\n    \"id\": 8,\n    \"nonProfitName\": \"Grifff\",\n    \"eventName\": \"Doc's Bday\",\n    \"eventDescription\": \"Bring me caeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeekeeeeeeeeeeeeeeeehkjgheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee989787eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"eventDate\": \"2022-05-11T21:15:31.711233\",\n    \"eventAddress\": \"6969 Nice Blvd\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -113,13 +113,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseApiUrl}}/Event/4",
+							"raw": "{{baseApiUrl}}/Event/8",
 							"host": [
 								"{{baseApiUrl}}"
 							],
 							"path": [
 								"Event",
-								"4"
+								"8"
 							]
 						}
 					},
@@ -137,7 +137,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"notetaker9@elevenfifty.org\",\n    \"password\": \"Test1!\",\n    \"confirmPassword\": \"Test1!\",\n    \"nonProfitUser\": true\n}",
+							"raw": "{\n    \"email\": \"notetaker11@elevenfifty.org\",\n    \"password\": \"Test1!\",\n    \"confirmPassword\": \"Test1!\",\n    \"nonProfitUser\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,7 +213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\"\n}",
+							"raw": "{\n  \"title\": \"strsdfinkjkhjg\",\n  \"content\": \"ssdftring\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -255,13 +255,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseApiUrl}}/NPEntity/1",
+							"raw": "{{baseApiUrl}}/NPEntity/3",
 							"host": [
 								"{{baseApiUrl}}"
 							],
 							"path": [
 								"NPEntity",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -274,7 +274,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": 1,\n  \"title\": \"string1\",\n  \"content\": \"string\"\n}",
+							"raw": "{\n  \"id\": 3,\n  \"title\": \"strhvbkjhlbing1\",\n  \"content\": \"string\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -299,13 +299,105 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseApiUrl}}/NPEntity/1",
+							"raw": "{{baseApiUrl}}/NPEntity/3",
 							"host": [
 								"{{baseApiUrl}}"
 							],
 							"path": [
 								"NPEntity",
-								"1"
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Volunteer Requests",
+			"item": [
+				{
+					"name": "GetAllVolunteers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/Volunteer",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Volunteer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateVolunteer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"email\": \"email\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Volunteer",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Volunteer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetVolunteerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/Volunteer/4",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Volunteer",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateVolunteerById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"string69\",\n  \"lastName\": \"string69\",\n  \"volunteerId\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/Volunteer",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"Volunteer"
 							]
 						}
 					},
