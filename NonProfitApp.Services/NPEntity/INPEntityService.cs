@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NonProfitApp.Models.Event;
-using NonProfitApp.Models.Note;
+using NonProfitApp.Models.NPEntity;
 using NonProfitApp.Models.NPEntity;
 
 namespace NonProfitApp.Services.NPEntity
