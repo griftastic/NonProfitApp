@@ -5,6 +5,7 @@ using NonProfitApp.Services.User;
 using NonProfitApp.Services.Token;
 using NonProfitApp.Data;
 using NonProfitApp.Services.Event;
+using NonProfitApp.Services.NPEntity;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,12 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace NonProfitApp.Models.NPEntity
+namespace NonProfitApp.Models.Note
 {
     public class NPEntityDetail
     {
-        
+        public int UserId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

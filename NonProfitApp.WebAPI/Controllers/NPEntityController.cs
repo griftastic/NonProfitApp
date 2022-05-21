@@ -10,23 +10,23 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace NonProfitApp.WebAPI.Controller
 {
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
         public class NPEntityController : ControllerBase
         {
-            private readonly INPEntityService _NPEntityService;
-            public NPEntityController(INPEntityService NPEntityService)
+            private readonly INPEntityService _nPEntityService;
+            public NPEntityController(INPEntityService nPEntityService)
             {
-                _NPEntityService = NPEntityService;
+                _nPEntityService = nPEntityService;
             }
 
     // GET api/Event
         [HttpGet]
         public async Task<IActionResult> GetAllNPEntities()
         {
-            var events = await _NPEntityService.GetAllNPEntitiesAsync();
-            return Ok(nPEntities);
+            var nPEntitiess = await _nPEntityService.GetAllNPEntitiesAsync();
+            return Ok(nPEntitiess);
         }
 
     // POST api/Event
@@ -36,16 +36,16 @@ namespace NonProfitApp.WebAPI.Controller
             if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-            if (await _eventService.CreateEventAsync(request))
+            if (await _nPEntityService.CreateNPEntityAsync(request))
                 return Ok("NonProfit created successfully");
 
             return BadRequest("NonProfit could not be created.");
         }
     // Get api/Event/6
     [HttpGet("{NonProfitId:int}")]
-    public async Task<IActionResult> GetEventById([FromRoute] int NonProfitId)
+    public async Task<IActionResult> GetNPEntityById([FromRoute] int NonProfitId)
     {
-        var detail = await _NPEntityService.GetNPEntityByIdAsync(NonProfitId);
+        var detail = await _nPEntityService.GetNPEntityByIdAsync(NonProfitId);
 
         return detail is not null
             ? Ok(detail)
@@ -64,7 +64,7 @@ namespace NonProfitApp.WebAPI.Controller
     }
 
     [HttpDelete("{NPEntityId:int}")]
-    public async Task<IActionResult> DeleteNPEntity([FromRoute] int NPEntityId)
+    public async Task<IActionResult> DeleteNPEntity([FromRoute] int nPEntityId)
     {
         return await _nPEntityService.DeleteNPEntityAsync(nPEntityId)
         ? Ok($"NPEntity {nPEntityId} was deleted successfully.")
