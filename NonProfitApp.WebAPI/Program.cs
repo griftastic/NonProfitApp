@@ -5,6 +5,7 @@ using NonProfitApp.Services.User;
 using NonProfitApp.Services.Token;
 using NonProfitApp.Data;
 using NonProfitApp.Services.Event;
+using NonProfitApp.Services.Volunteer;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IVolunteerService, VolunteerService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
