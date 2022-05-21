@@ -12,7 +12,7 @@ dotnet ef migrations add AddAllTables -p NonProfitApp.Data -s NonProfitApp.WebAP
 3. After this, you need to update your migration. Type in: 
 
 ```
-dotnet ef database update -p NonProfit.Data -s NonProfitApp.WebAPI
+dotnet ef database update -p NonProfitApp.Data -s NonProfitApp.WebAPI
 ```
 
 Your SQL Database should now have all of the entities present.
