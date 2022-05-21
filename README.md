@@ -28,9 +28,9 @@ Here are the endpoints we used to accomplish our goals.
 - [DeleteEvent](./MarkdownDocumentation/Endpoints/Event/DeleteEvent.md)
 
 ### NonProfit
-- [CreateNPEntity](./MarkdownDocumentation/Endpoints/Event/CreateNPEntity.md)
-- [GetAllNPEntities](./MarkdownDocumentation/Endpoints/Event/GetAllNPEntities.md)
-- [GetNPEntityById](./MarkdownDocumentation/Endpoints/Event/GetNPEntityById.md)
-- [EditNPEntity](./MarkdownDocumentation/Endpoints/Event/EditNPEntity.md)
-- [DeleteNPEntity](./MarkdownDocumentation/Endpoints/Event/DeleteNPEntity.md)
+- [CreateNPEntity](./MarkdownDocumentation/Endpoints/NPEntity/CreateNPEntity.md)
+- [GetAllNPEntities](./MarkdownDocumentation/Endpoints/NPEntity/GetAllNPEntities.md)
+- [GetNPEntityById](./MarkdownDocumentation/Endpoints/NPEntity/GetNPEntityById.md)
+- [EditNPEntity](./MarkdownDocumentation/Endpoints/NPEntity/EditNPEntity.md)
+- [DeleteNPEntity](./MarkdownDocumentation/Endpoints/NPEntity/DeleteNPEntity.md)
 
