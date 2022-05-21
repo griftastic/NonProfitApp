@@ -17,7 +17,9 @@ namespace NonProfitApp.Data
         public DbSet<UserEntity> Users { get; set; }       
         
         public DbSet<EventEntity> Events { get; set; }
+
+        public DbSet<VolunteerEntitiy> Volunteers { get; set; }
+
         public DbSet<NonPEntity> NPEntities { get; set; }
-        
     }
 }
