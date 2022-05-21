@@ -10,10 +10,14 @@ namespace NonProfitApp.Data
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            :base(options)
-        {
-        }
-        public DbSet<UserEntity> Users { get; set; }
+            : base(options)
+            {
+
+            }
+        public DbSet<UserEntity> Users { get; set; }       
+        
         public DbSet<EventEntity> Events { get; set; }
+        public DbSet<NonPEntity> NPEntities { get; set; }
+        
     }
 }
