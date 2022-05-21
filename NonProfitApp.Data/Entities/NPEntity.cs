@@ -25,4 +25,3 @@ namespace NonProfitApp.Data.Entities
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
-      

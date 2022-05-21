@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace NonProfitApp.WebAPI.Controller
 {
-    // [Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
         public class NPEntityController : ControllerBase

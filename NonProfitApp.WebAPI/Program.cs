@@ -44,6 +44,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseAuthentication();
 
 app.UseAuthorization();
 // if (app.Environment.IsDevelopment())
@@ -53,7 +54,6 @@ app.UseAuthorization();
 // }
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
 
 
 app.MapControllers();

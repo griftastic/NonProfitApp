@@ -27,8 +27,10 @@ Here are the endpoints we used to accomplish our goals.
 - [EditEvent](./MarkdownDocumentation/Endpoints/Event/EditEvent.md)
 - [DeleteEvent](./MarkdownDocumentation/Endpoints/Event/DeleteEvent.md)
 
-### Volunteer Skills
-
-
-
 ### NonProfit
+- [CreateNPEntity](./MarkdownDocumentation/Endpoints/Event/CreateNPEntity.md)
+- [GetAllNPEntities](./MarkdownDocumentation/Endpoints/Event/GetAllNPEntities.md)
+- [GetNPEntityById](./MarkdownDocumentation/Endpoints/Event/GetNPEntityById.md)
+- [EditNPEntity](./MarkdownDocumentation/Endpoints/Event/EditNPEntity.md)
+- [DeleteNPEntity](./MarkdownDocumentation/Endpoints/Event/DeleteNPEntity.md)
+
