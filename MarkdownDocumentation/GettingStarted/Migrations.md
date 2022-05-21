@@ -3,22 +3,19 @@
 Now that your connection string is set up. You are ready to start migrating the entities into your SQL server.
 
 1. Open a new terminal.
-2. Type in:
+2. To initialize the migration, type in:
 
 ```
-
+dotnet ef migrations add AddAllTables -p NonProfitApp.Data -s NonProfitApp.WebAPI
 ```
 
-2. Locate the connection string on line 19.
-
-It should look like this:
-```
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password=PASSWORD"));
+3. After this, you need to update your migration. Type in: 
 
 ```
-3. Replace 'PASSWORD' with your personal SQL password.
+dotnet ef database update -p NonProfit.Data -s NonProfitApp.WebAPI
+```
 
-At this point, the connection string is all ready to go for your app.
+Your SQL Database should now have all of the entities present.
 
 ---
 [Next](./PostmanIntegration.md)

@@ -1,21 +1,18 @@
-# Connection String
+#PostmanIntegration
 
-This app requires the use of a local SQL Server. You should have a localhost server set up all ready.
+Now that you have your SQL Database updated, you need to bring in the functionality.
 
-For your convenience, we have provided a filled out connection string within ./NonProfitApp.WebAPI/Program.cs
+We used Postman to test out all of our endpoints.
 
-1. Navigate to ./NonProfitApp.WebAPI.Program.cs
-2. Locate the connection string on line 19.
+We have conveniently provided a .json file to help you import our Postman Collection.
 
-It should look like this:
-```
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password=PASSWORD"));
+The file's name is:
+NonProfitApp.postman_collection.json
 
-```
-3. Replace 'PASSWORD' with your personal SQL password.
+Click [here](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-postman-data) for the Postman tutorial on how to import a Postman Collection using a .json file.
 
-At this point, the connection string is all ready to go for your app.
 
+You are now ready to start using our NonProfit App!
 ---
 
 [Back to home](../../README.md)
