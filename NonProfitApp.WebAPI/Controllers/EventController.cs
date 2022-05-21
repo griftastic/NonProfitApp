@@ -23,6 +23,7 @@ namespace NonProfitApp.WebAPI.Controllers
 
     // GET api/Event
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<EventListItem>), 200)]
         public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();

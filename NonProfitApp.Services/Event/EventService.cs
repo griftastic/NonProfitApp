@@ -68,7 +68,7 @@ namespace NonProfitApp.Services.Event
         // Find the first note that has the given Id and an UserId that matches the requesting userId
         var eventEntity = await _dbContext.Events
             .FirstOrDefaultAsync(e =>
-                e.UserId == eventId && e.UserId == _userId
+                e.EventId == eventId && e.UserId == _userId
                 );
 
         // If eventEntity is null then return null, otherwise initialize and retun a new EventDetail
