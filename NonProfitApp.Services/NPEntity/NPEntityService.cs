@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NonProfitApp.Data;
 using NonProfitApp.Data.Entities;
-using NonProfitApp.Models.Note;
+using NonProfitApp.Models.NPEntity;
 using NonProfitApp.Models.NPEntity;
 
 namespace NonProfitApp.Services.NPEntity

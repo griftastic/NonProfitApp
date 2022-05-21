@@ -1,6 +1,6 @@
 using System;
 
-namespace NonProfitApp.Models.Note
+namespace NonProfitApp.Models.NPEntity
 {
     public class NPEntityDetail
     {
