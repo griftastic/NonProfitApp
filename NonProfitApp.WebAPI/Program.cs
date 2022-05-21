@@ -6,6 +6,7 @@ using NonProfitApp.Services.Token;
 using NonProfitApp.Data;
 using NonProfitApp.Services.Event;
 using NonProfitApp.Services.Volunteer;
+using NonProfitApp.Services.NPEntity;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,15 +18,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 
 // Add connection string and DbContext setup"
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=NonProfitApp;User=sa;Password="));
         //  builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-
 
 // Add User Service/Interface for Dependency Injection Here
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IVolunteerService, VolunteerService>();
+builder.Services.AddScoped<INPEntityService, NPEntityService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -44,17 +46,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
+app.UseAuthorization();
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-
+// }
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
-app.UseAuthorization();
 
 app.MapControllers();
 
